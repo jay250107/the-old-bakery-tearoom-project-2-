@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact The Old Bakery Tearoom cafe.">
+    <title>Contact | The Old Bakery Tearoom</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="javascript/script.js"></script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+    <a href="index.html" class="logo">The Old Bakery Tearoom</a>
+
+    <button class="menu-toggle" aria-label="Open navigation menu"
+            aria-expanded="false" aria-controls="main-navigation">☰</button>
+
+    <nav id="main-navigation" aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="accessibility-controls">
+        <button id="theme-toggle" type="button">Dark / Light</button>
+        <button id="decrease-text" type="button">A-</button>
+        <button id="reset-text" type="button">A</button>
+        <button id="increase-text" type="button">A+</button>
+    </div>
+</header>
+
+<main id="main-content">
+
+    <section class="page-heading">
+        <p class="eyebrow">GET IN TOUCH</p>
+        <h1>We'd Love to <span>Hear From You.</span></h1>
+        <p>Have a question? Get in touch with our friendly team.</p>
+    </section>
+
+    <section class="contact-section">
+
+        <div class="contact-information">
+
+            <h2>Visit Our Cafe</h2>
+
+            <h3>Address</h3>
+            <p>12 Market Street<br>Yourtown, UK</p>
+
+            <h3>Email</h3>
+            <p>
+                <a href="mailto:hello@theoldbakerytearoom.example">
+                    hello@TheOldBakeryTearoom.example
+                </a>
+            </p>
+
+            <h3>Telephone</h3>
+            <p>
+                <a href="tel:01234567890">
+                    01234 567890
+                </a>
+            </p>
+
+            <h3>Opening Hours</h3>
+            <p>Monday - Saturday: 8am - 5pm</p>
+            <p>Sunday: 9am - 3pm</p>
+
+            <p class="small-note">
+                These are fictional contact details for this project.
+            </p>
+
+        </div>
+
+        <div class="contact-form-container">
+
+            <h2>Send Us a Message</h2>
+
+            <form id="contact-form" novalidate>
+
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name"
+                           autocomplete="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email"
+                           autocomplete="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message *</label>
+                    <textarea id="message" name="message"
+                              rows="5" required minlength="10"></textarea>
+                </div>
+
+                <button type="submit" class="primary-button">
+                    Send Message
+                </button>
+
+                <p id="form-feedback" role="status" aria-live="polite"></p>
+
+            </form>
+
+            <p class="small-note">
+                Demonstration form only. Messages are not transmitted
+                or stored.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div><h2>The Old Bakery Tearoom.</h2><p>Your neighbourhood coffee destination.</p></div>
+        <div><h3>Quick Links</h3><a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a></div>
+        <div><h3>Opening Hours</h3><p>Monday - Saturday: 8am - 5pm</p><p>Sunday: 9am - 3pm</p></div>
+    </div>
+    <p class="copyright">&copy; 2026 Jay Kilgour-Hayes. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

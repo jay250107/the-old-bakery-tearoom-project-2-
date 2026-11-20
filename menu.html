@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore coffee, drinks and snacks at The Old Bakery Tearoom.">
+    <title>Menu | The Old Bakery Tearoom</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="javascript/script.js"></script>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+    <a href="index.html" class="logo">The Old Bakery Tearoom</a>
+
+    <button class="menu-toggle" aria-label="Open navigation menu"
+            aria-expanded="false" aria-controls="main-navigation">☰</button>
+
+    <nav id="main-navigation" aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html" aria-current="page">Menu</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="accessibility-controls">
+        <button id="theme-toggle" type="button">Dark / Light</button>
+        <button id="decrease-text" type="button">A-</button>
+        <button id="reset-text" type="button">A</button>
+        <button id="increase-text" type="button">A+</button>
+    </div>
+</header>
+
+<main id="main-content">
+
+    <section class="page-heading">
+        <p class="eyebrow">FRESHLY PREPARED</p>
+        <h1>Explore Our <span>Menu.</span></h1>
+        <p>Find something delicious to enjoy.</p>
+    </section>
+
+    <section class="menu-section">
+
+        <h2>Our Categories</h2>
+
+        <div class="filter-buttons" role="group" aria-label="Filter menu">
+
+            <button class="filter-btn active" data-filter="all"
+                    aria-pressed="true">All</button>
+
+            <button class="filter-btn" data-filter="coffee"
+                    aria-pressed="false">Coffee</button>
+
+            <button class="filter-btn" data-filter="drinks"
+                    aria-pressed="false">Drinks</button>
+
+            <button class="filter-btn" data-filter="snacks"
+                    aria-pressed="false">Snacks</button>
+
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card" data-category="coffee">
+                <img src="../Project 2/assets/Images/coffee1.jpeg"
+                     alt="Fresh cappuccino with milk foam">
+                <div class="product-information">
+                    <h3>Cappuccino</h3>
+                    <p>Rich espresso topped with steamed milk and foam.</p>
+                    <strong>£3.40</strong>
+                    <a href="#" class="add-to-basket"
+                       data-name="Cappuccino" data-price="3.40">
+                        Add to basket
+                    </a>
+                </div>
+            </article>
+
+            <article class="product-card" data-category="coffee">
+                <img src="../Project 2/assets/Images/coffee2.jpeg"
+                     alt="Latte coffee served in a glass">
+                <div class="product-information">
+                    <h3>Vanilla Latte</h3>
+                    <p>Smooth espresso blended with creamy vanilla milk.</p>
+                    <strong>£3.80</strong>
+                    <a href="#" class="add-to-basket"
+                       data-name="Vanilla Latte" data-price="3.80">
+                        Add to basket
+                    </a>
+                </div>
+            </article>
+
+            <article class="product-card" data-category="drinks">
+                <img src="../Project 2/assets/Images/icecoffee1.jpeg"
+                     alt="Refreshing iced coffee">
+                <div class="product-information">
+                    <h3>Iced Coffee</h3>
+                    <p>Refreshing chilled coffee served over ice.</p>
+                    <strong>£3.60</strong>
+                    <a href="#" class="add-to-basket"
+                       data-name="Iced Coffee" data-price="3.60">
+                        Add to basket
+                    </a>
+                </div>
+            </article>
+
+            <article class="product-card" data-category="drinks">
+                <img src="../Project 2/assets/Images/coffee3.jpeg"
+                     alt="A freshly prepared cup of tea">
+                <div class="product-information">
+                    <h3>Fresh Mint Tea</h3>
+                    <p>A refreshing and relaxing herbal infusion.</p>
+                    <strong>£2.90</strong>
+                    <a href="#" class="add-to-basket"
+                       data-name="Fresh Mint Tea" data-price="2.90">
+                        Add to basket
+                    </a>
+                </div>
+            </article>
+
+            <article class="product-card" data-category="snacks">
+                <img src="../Project 2/assets/Images/bread1.jpeg"
+                     alt="Golden buttery croissant">
+                <div class="product-information">
+                    <h3>Butter Croissant</h3>
+                    <p>A flaky, golden pastry baked to perfection.</p>
+                    <strong>£2.70</strong>
+                    <a href="#" class="add-to-basket"
+                       data-name="Butter Croissant" data-price="2.70">
+                        Add to basket
+                    </a>
+                </div>
+            </article>
+
+            <article class="product-card" data-category="snacks">
+                <img src="../Project 2/assets/Images/cake1.jpeg"
+                     alt="A delicious slice of chocolate cake">
+                <div class="product-information">
+                    <h3>Chocolate Cake</h3>
+                    <p>Rich chocolate sponge for a sweet afternoon treat.</p>
+                    <strong>£3.50</strong>
+                    <a href="#" class="add-to-basket"
+                       data-name="Chocolate Cake" data-price="3.50">
+                        Add to basket
+                    </a>
+                </div>
+            </article>
+
+        </div>
+
+        <section class="basket" aria-live="polite">
+            <h2>Your Basket</h2>
+            <p>Items: <span id="basket-count">0</span></p>
+            <p>Total: £<span id="basket-total">0.00</span></p>
+            <button id="clear-basket" type="button">Clear Basket</button>
+        </section>
+
+        <p class="small-note">
+            Sample menu and prices for this fictional café.
+            No real orders or payments are processed.
+        </p>
+
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div><h2>The Old Bakery Tearoom.</h2><p>Your neighbourhood coffee destination.</p></div>
+        <div><h3>Quick Links</h3><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+        <div><h3>Opening Hours</h3><p>Monday - Saturday: 8am - 5pm</p><p>Sunday: 9am - 3pm</p></div>
+    </div>
+    <p class="copyright">&copy; 2026 Jay Kilgour-Hayes. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

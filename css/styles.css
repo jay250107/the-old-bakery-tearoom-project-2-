@@ -1,0 +1,653 @@
+
+/* =========================================
+   THE DAILY GRIND - WEBSITE STYLES
+   Espresso brown, cream and sage green.
+========================================= */
+
+/* 1. Global settings */
+
+:root {
+    --primary: #4b382d;
+    --secondary: #87917b;
+    --background: #f8f5ef;
+    --surface: #ffffff;
+    --text: #302820;
+    --muted: #686159;
+    --border: #ded8ce;
+    --font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: var(--font-size);
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 3px;
+}
+
+/* 2. Dark mode */
+
+body.dark-mode {
+    --primary: #d7c7b3;
+    --secondary: #aab69c;
+    --background: #201e1a;
+    --surface: #302c25;
+    --text: #f5efe5;
+    --muted: #c3bbae;
+    --border: #514a40;
+}
+
+/* 3. Accessibility */
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    background: var(--primary);
+    color: white;
+    padding: 12px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+/* 4. Header and navigation */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 6%;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    gap: 15px;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--secondary);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    color: var(--secondary);
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    color: var(--text);
+    font-size: 20px;
+}
+
+.accessibility-controls {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.accessibility-controls button {
+    padding: 7px 10px;
+    background: var(--background);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 4px;
+}
+
+/* 5. Typography */
+
+h1,
+h2,
+h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+.eyebrow {
+    color: var(--secondary);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+/* 6. Original buttons */
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    padding: 13px 25px;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.primary-button {
+    background: var(--secondary);
+    color: #ffffff;
+}
+
+.secondary-button {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+    opacity: 0.85;
+}
+
+/* 7. Home page hero */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding: 70px 8%;
+    background: var(--background);
+}
+
+.hero-content h1 span,
+.page-heading h1 span {
+    color: var(--secondary);
+}
+
+.hero-content p {
+    max-width: 500px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* 8. Welcome section */
+
+.welcome-section {
+    text-align: center;
+    max-width: 750px;
+    margin: auto;
+    padding: 65px 20px;
+}
+
+/* 9. Feature cards */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 50px 8%;
+}
+
+.feature-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 30px;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 40px;
+}
+
+/* 10. Call to action */
+
+.cta-section {
+    text-align: center;
+    padding: 65px 20px;
+    background: var(--surface);
+}
+
+/* 11. Page headings */
+
+.page-heading {
+    text-align: center;
+    padding: 65px 20px;
+    background: var(--surface);
+}
+
+.page-heading h1 span {
+    color: var(--secondary);
+}
+
+/* 12. About page */
+
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    padding: 65px 8%;
+}
+
+.about-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+.values-section {
+    padding: 60px 8%;
+    text-align: center;
+    background: var(--surface);
+}
+
+/* 13. Menu page */
+
+.menu-section {
+    padding: 60px 8%;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.filter-btn {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+.filter-btn.active,
+.filter-btn[aria-pressed="true"] {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.product-card[hidden] {
+    display: none;
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-information {
+    padding: 20px;
+}
+
+.product-information p {
+    color: var(--muted);
+}
+
+.add-to-basket {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    background: var(--secondary);
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+}
+
+.basket {
+    margin-top: 40px;
+    padding: 25px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.basket button {
+    padding: 10px 20px;
+    background: var(--primary);
+    color: #ffffff;
+    border: none;
+}
+
+.small-note {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* 14. Product page */
+
+.featured-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    padding: 70px 8%;
+}
+
+.featured-product-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.product-price {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+/* 15. Contact page */
+
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 70px 8%;
+}
+
+.contact-information h3 {
+    margin-top: 25px;
+}
+
+.contact-information a {
+    color: var(--secondary);
+}
+
+.contact-form-container {
+    padding: 30px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    background: var(--background);
+    color: var(--text);
+    border-radius: 3px;
+}
+
+.form-group input[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"] {
+    border: 2px solid #a33b32;
+}
+
+/* 16. Footer */
+
+.site-footer {
+    padding: 50px 8% 20px;
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 30px;
+}
+
+.footer-content a {
+    display: block;
+    color: #ffffff;
+    margin: 8px 0;
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    margin-top: 30px;
+}
+
+/* 17. Tablet responsiveness */
+
+@media (max-width: 1000px) {
+
+    .site-header {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+    }
+
+    nav.open {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 0;
+    }
+
+    .hero,
+    .about-section,
+    .featured-product,
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 18. Mobile responsiveness */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 40px 6%;
+    }
+
+    .hero-image img {
+        height: 280px;
+    }
+
+    .features,
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-section,
+    .featured-product,
+    .contact-section {
+        padding: 40px 6%;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .accessibility-controls {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+/* 19. Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* 20. Link-style buttons */
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 13px 25px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* Add a visible arrow icon after the button text. */
+.btn::after {
+    content: "\2192";
+    display: inline-block;
+    font-size: 1.15em;
+    line-height: 1;
+}
+
+.btn-primary {
+    background-color: #87917b;
+    color: #ffffff;
+    border-color: #87917b;
+}
+
+.btn-primary:hover {
+    background-color: #707b65;
+    border-color: #707b65;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #4b382d;
+    color: #ffffff;
+    border-color: #4b382d;
+}
+
+.btn-secondary:hover {
+    background-color: #36271f;
+    border-color: #36271f;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.btn:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 3px;
+}
+
+/* Mobile button layout */
+
+@media (max-width: 600px) {
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
