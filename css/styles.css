@@ -1,4 +1,3 @@
-
 /* =========================================
    THE DAILY GRIND - WEBSITE STYLES
    Espresso brown, cream and sage green.
@@ -371,20 +370,6 @@ h2 {
     border-radius: 3px;
 }
 
-.basket {
-    margin-top: 40px;
-    padding: 25px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-}
-
-.basket button {
-    padding: 10px 20px;
-    background: var(--primary);
-    color: #ffffff;
-    border: none;
-}
-
 .small-note {
     color: var(--muted);
     font-size: 13px;
@@ -650,4 +635,109 @@ h2 {
     .btn {
         width: 100%;
     }
+}
+
+/* 21. Header basket */
+
+.header-basket-container {
+    position: relative;
+    margin-left: auto;
+}
+
+.header-basket {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: var(--background);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.header-basket:hover {
+    background: var(--secondary);
+    color: #ffffff;
+}
+
+#header-basket-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    padding: 2px 6px;
+    background: var(--primary);
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 13px;
+}
+
+/* 22. Header basket dropdown */
+
+.header-basket-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 320px;
+    max-width: 90vw;
+    padding: 20px;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+.header-basket-dropdown[hidden] {
+    display: none;
+}
+
+.header-basket-dropdown h2 {
+    font-size: 22px;
+    margin-top: 0;
+}
+
+.header-basket-dropdown #clear-basket {
+    padding: 10px 20px;
+    background: var(--primary);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.basket-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.basket-item select {
+    padding: 7px;
+    background: var(--background);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font: inherit;
+}
+
+/* Mobile basket dropdown */
+
+@media (max-width: 600px) {
+
+    .header-basket-container {
+        margin-left: auto;
+    }
+
+    .header-basket-dropdown {
+        right: 0;
+    }
+
 }

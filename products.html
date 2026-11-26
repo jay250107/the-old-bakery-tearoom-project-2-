@@ -7,7 +7,7 @@
     <meta name="description" content="Discover our featured coffee products.">
     <title>Products | The Old Bakery Tearoom</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="javascript/script.js"></script>
+    <script src="javascript/script.js" defer></script>
 </head>
 
 <body>
@@ -16,6 +16,7 @@
 
 <header class="site-header">
     <a href="index.html" class="logo">The Old Bakery Tearoom</a>
+
     <button class="menu-toggle" aria-label="Open navigation menu"
             aria-expanded="false" aria-controls="main-navigation">☰</button>
 
@@ -28,6 +29,40 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
+
+    <!-- Header basket dropdown -->
+    <div class="header-basket-container">
+
+        <button type="button" class="header-basket"
+                id="header-basket-toggle"
+                aria-label="Open basket, 0 items"
+                aria-expanded="false"
+                aria-controls="header-basket-dropdown">
+
+            <span aria-hidden="true">🛒</span>
+            <span>Basket</span>
+            <span id="header-basket-count">0</span>
+
+        </button>
+
+        <div class="header-basket-dropdown"
+             id="header-basket-dropdown" hidden>
+
+            <h2>Your Basket</h2>
+
+            <div id="basket-items"></div>
+
+            <p>Items: <span id="basket-count">0</span></p>
+
+            <p>Total: £<span id="basket-total">0.00</span></p>
+
+            <button id="clear-basket" type="button">
+                Clear Basket
+            </button>
+
+        </div>
+
+    </div>
 
     <div class="accessibility-controls">
         <button id="theme-toggle" type="button">Dark / Light</button>

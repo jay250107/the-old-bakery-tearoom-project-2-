@@ -1,4 +1,3 @@
-
 "use strict";
 
 // Wait until the HTML document has loaded.
@@ -172,6 +171,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const basketCount = document.getElementById("basket-count");
     const basketTotal = document.getElementById("basket-total");
+    const basketItems = document.getElementById("basket-items");
+
+    // Header basket elements.
+    const headerBasketCount = document.getElementById("header-basket-count");
+    const headerBasketButton = document.getElementById("header-basket-toggle");
+    const headerBasketDropdown = document.getElementById("header-basket-dropdown");
+
+    // Open and close the header basket dropdown.
+    if (headerBasketButton && headerBasketDropdown) {
+
+        headerBasketButton.addEventListener("click", function () {
+
+            const isOpen = !headerBasketDropdown.hidden;
+
+            headerBasketDropdown.hidden = isOpen;
+
+            headerBasketButton.setAttribute(
+                "aria-expanded",
+                String(!isOpen)
+            );
+
+        });
+
+    }
 
     function updateBasket() {
 
@@ -193,10 +216,79 @@ document.addEventListener("DOMContentLoaded", function () {
             basketTotal.textContent = total.toFixed(2);
         }
 
+        // Update the basket count in the header.
+        if (headerBasketCount) {
+            headerBasketCount.textContent = count;
+        }
+
+        // Update the accessible label of the header basket.
+        if (headerBasketButton) {
+            headerBasketButton.setAttribute(
+                "aria-label",
+                "Open basket, " + count + " items"
+            );
+        }
+
+        // Display basket items with a remove dropdown.
+        if (basketItems) {
+
+            basketItems.replaceChildren();
+
+            basket.forEach(function (item, index) {
+
+                const itemRow = document.createElement("div");
+                itemRow.className = "basket-item";
+
+                const itemDetails = document.createElement("span");
+
+                itemDetails.textContent =
+                    item.name + " x " + item.quantity +
+                    " - £" + (item.price * item.quantity).toFixed(2);
+
+                const removeDropdown = document.createElement("select");
+
+                removeDropdown.setAttribute(
+                    "aria-label",
+                    "Options for " + item.name
+                );
+
+                const defaultOption = document.createElement("option");
+                defaultOption.value = "";
+                defaultOption.textContent = "Choose action";
+
+                const removeOption = document.createElement("option");
+                removeOption.value = "remove";
+                removeOption.textContent = "Remove item";
+
+                removeDropdown.appendChild(defaultOption);
+                removeDropdown.appendChild(removeOption);
+
+                removeDropdown.addEventListener("change", function () {
+
+                    if (removeDropdown.value === "remove") {
+
+                        basket.splice(index, 1);
+
+                        updateBasket();
+
+                    }
+
+                });
+
+                itemRow.appendChild(itemDetails);
+                itemRow.appendChild(removeDropdown);
+
+                basketItems.appendChild(itemRow);
+
+            });
+
+        }
+
         localStorage.setItem("cafeBasket", JSON.stringify(basket));
 
     }
 
+    // Add products to basket.
     const addButtons = document.querySelectorAll(".add-to-basket");
 
     addButtons.forEach(function (button) {
@@ -241,6 +333,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
+    // Clear the entire basket.
     const clearBasketButton = document.getElementById("clear-basket");
 
     if (clearBasketButton) {
